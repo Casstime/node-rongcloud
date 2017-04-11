@@ -7,7 +7,7 @@ const message = require('./lib/message');
 
 /**
  * 初始化
- * @function init
+ * @function
  * @static
  * @param {object} options
  * @param {string} options.appKey
@@ -19,13 +19,11 @@ module.exports.init = invoke.init;
 /**
  * 融云请求接口
  * @see {@link module:invoke}
- * @type {invoke}
  */
 module.exports.invoke = invoke;
 
 /**
  * 消息相关接口
  * @see {@link module:message}
- * @type {message}
  */
 module.exports.message = message;
