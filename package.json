@@ -1,0 +1,28 @@
+{
+  "name": "node-rongcloud",
+  "version": "0.1.0",
+  "description": "rongcloud api for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Casstime/node-rongcloud.git"
+  },
+  "keywords": [
+    "rongcloud",
+    "node-rongcloud"
+  ],
+  "author": "pansinm <pansinm@foxmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Casstime/node-rongcloud/issues"
+  },
+  "homepage": "https://github.com/Casstime/node-rongcloud#readme",
+  "dependencies": {
+    "boom": "^4.3.1",
+    "joi": "^10.4.1",
+    "request": "^2.81.0"
+  }
+}
