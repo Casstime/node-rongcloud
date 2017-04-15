@@ -17,12 +17,14 @@ function RongCloud(options) {
   this.appSecret = appSecret;
   this.usePrefix = usePrefix;
   this.timeout = options.timeout || 6000;
+
   this.setLogger(options.logger);
 }
 
 Object.assign(
   RongCloud.prototype,
-  require('./lib/utils'),
+  require('./lib/util'),
+  require('./lib/user'),
   require('./lib/message')
 );
 
