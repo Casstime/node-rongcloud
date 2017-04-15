@@ -1,29 +1,29 @@
-const invoke = require('./lib/invoke');
-const message = require('./lib/message');
-
 /**
- * @module node-rongcloud
- */
-
-/**
- * 初始化
- * @function
- * @static
  * @param {object} options
  * @param {string} options.appKey
  * @param {string} options.appSecret
- * @param {boolean} options.usePrefix 头部是否使用RC-前缀
+ * @param {boolean} [options.usePrefix] 头部是否使用RC-前缀
+ * @param {number} [options.timeout] 请求超时时间
+ * @param {boolean|object} [options.logger] 日志工具，默认false,不打印日志
+ * @constructor
  */
-module.exports.init = invoke.init;
+function RongCloud(options) {
+  const { appKey, appSecret, usePrefix } = options;
+  if (!appKey || !appSecret) {
+    throw new Error('appKey 和 appSecret 必须传入');
+  }
 
-/**
- * 融云请求接口
- * @see {@link module:invoke}
- */
-module.exports.invoke = invoke;
+  this.appKey = appKey;
+  this.appSecret = appSecret;
+  this.usePrefix = usePrefix;
+  this.timeout = options.timeout || 6000;
+  this.setLogger(options.logger);
+}
 
-/**
- * 消息相关接口
- * @see {@link module:message}
- */
-module.exports.message = message;
+Object.assign(
+  RongCloud.prototype,
+  require('./lib/utils'),
+  require('./lib/message')
+);
+
+module.exports = RongCloud;

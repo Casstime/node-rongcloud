@@ -1,19 +1,17 @@
 const { expect } = require('chai');
 
 const config = require('./config');
-const rongCloud = require('../index');
+const RongCloud = require('../index');
+
+const rongCloud = new RongCloud({
+  appKey: config.appKey,
+  appSecret: config.appSecret
+});
 
 describe('Message Test', () => {
-  before(() => {
-    rongCloud.init({
-      appKey: config.appKey,
-      appSecret: config.appSecret
-    });
-  });
-
   describe('Publish Message', () => {
     it('Publish TextMessage', (done) => {
-      rongCloud.message.publishPrivate({
+      rongCloud.publishPrivateMessage({
         toUserId: config.message.toUserId,
         fromUserId: config.message.fromUserId,
         content: JSON.stringify({ content: config.message.textMsg }),
