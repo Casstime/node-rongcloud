@@ -5,7 +5,8 @@ const RongCloud = require('../index');
 
 const rongCloud = new RongCloud({
   appKey: config.appKey,
-  appSecret: config.appSecret
+  appSecret: config.appSecret,
+  logger: true
 });
 
 describe('Message Test', () => {
@@ -39,5 +40,23 @@ describe('Message Test', () => {
         })
         .catch(done)
     });
+  });
+
+  describe('Publish Private Template', () => {
+    it('Publish Text Template', (done) => {
+      rongCloud.publishPrivateTemplate({
+        toUserId: [config.message.toUserId],
+        fromUserId: config.message.fromUserId,
+        objectName: 'RC:TxtMsg',
+        content: JSON.stringify({ content: '{c}/{d}' }),
+        values: [{'{c}': '测试', '{d}': '数据'}],
+        pushContent: ['push{c}']
+      })
+        .then((result) => {
+          expect(result).to.have.property('code', 200);
+          done();
+        })
+        .catch(done)
+    })
   });
 });
