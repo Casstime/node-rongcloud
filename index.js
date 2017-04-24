@@ -21,11 +21,21 @@ function RongCloud(options) {
   this.setLogger(options.logger);
 }
 
+// 内置接口
 Object.assign(
   RongCloud.prototype,
   require('./lib/util'),
   require('./lib/user'),
-  require('./lib/message')
+  require('./lib/message'),
+  require('./lib/sensitive-word')
 );
+
+/**
+ * 扩展接口
+ * @param obj
+ */
+RongCloud.extend = function (obj) {
+  Object.assign(RongCloud.prototype, obj);
+};
 
 module.exports = RongCloud;
