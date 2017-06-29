@@ -27,7 +27,8 @@ Object.assign(
   require('./lib/util'),
   require('./lib/user'),
   require('./lib/message'),
-  require('./lib/sensitive-word')
+  require('./lib/sensitive-word'),
+  require('./lib/group')
 );
 
 /**

@@ -1,7 +1,6 @@
 node-rongcloud
 ==============
-
-开发中，请不要用于生产环境，node>6.0
+融云服务Node.js封装库，需要Node.js版本 > 6
 
 ## 安装
 ```
@@ -25,7 +24,26 @@ const params = {
   objectName: 'RC:TxtMsg'
 };
 
-rongCloud.message.publishPrivate(params).then((result) => {
+rongCloud.publishPrivateMessage(params).then((result) => {
   // {code: 200}
 });
 ```
+
+### API
+
+- rongCloud.publishPrivateMessage(params) 发送单聊消息
+- rongCloud.publishPrivateTemplate(params) 发送单聊模板消息
+- rongCloud.publishSystemMessage(params) 发送系统消息
+- rongCloud.publishSystemTemplate(params) 发送系统模板消息
+- rongCloud.publishGroupMessage(params) 发送群组消息
+- rongCloud.publishDiscussionMessage(params) 发送讨论组消息
+- rongCloud.broadcastChatRoomMessage(params) 广播聊天室消息 (付费)
+- rongCloud.broadcastMessage(params) 广播消息 (付费)
+- rongCloud.getHistoryMessagesUrl(date) 获取指定时间的历史消息下载链接
+- rongCloud.removeHistoryMessages(date) 删除指定时间的历史消息
+
+### TODO
+
+[] 文档
+
+[] chatroom api
