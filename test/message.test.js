@@ -16,7 +16,8 @@ describe('Message Test', () => {
         toUserId: config.message.toUserId,
         fromUserId: config.message.fromUserId,
         content: JSON.stringify({ content: config.message.textMsg }),
-        objectName: 'RC:TxtMsg'
+        objectName: 'RC:TxtMsg',
+        isIncludeSender: true
       })
         .then((result) => {
           expect(result).to.have.property('code', 200);
