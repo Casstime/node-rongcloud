@@ -10,11 +10,13 @@ npm install node-rongcloud
 
 ## 使用
 ```javascript
-const rongCloud = require('node-rongcloud');
+const RongCloud = require('node-rongcloud');
 
-rongCloud.init({
-  appKey: 'appKey',
-  appSecret: 'appSecret'
+
+const rongCloud = new RongCloud({
+  appKey: config.appKey,
+  appSecret: config.appSecret,
+  logger: true
 });
 
 const params = {

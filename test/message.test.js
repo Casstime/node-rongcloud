@@ -43,6 +43,23 @@ describe('Message Test', () => {
     });
   });
 
+  describe('Publish System Message to multi person', () => {
+    it('Publish Text Message', (done) => {
+      rongCloud.publishSystemMessage({
+        toUserId: [config.message.toUserId, config.message.fromUserId],
+        fromUserId: config.message.fromUserId,
+        content: JSON.stringify({ content: config.message.textMsg }),
+        objectName: 'RC:TxtMsg'
+      })
+        .then((result) => {
+          expect(result).to.have.property('code', 200);
+          done();
+        })
+        .catch(done)
+    });
+  });
+
+
   describe('Publish Private Template', () => {
     it('Publish Text Template', (done) => {
       rongCloud.publishPrivateTemplate({

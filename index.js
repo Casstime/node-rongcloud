@@ -1,4 +1,12 @@
+const Utility = require('./lib/util');
+const Group = require('./lib/group');
+const Message = require('./lib/message');
+const SensitiveWord = require('./lib/sensitive-word');
+const History = require('./lib/history');
+const User = require('./lib/user');
+
 /**
+ * @mixin RongCloud
  * @param {object} options
  * @param {string} options.appKey
  * @param {string} options.appSecret
@@ -24,12 +32,12 @@ function RongCloud(options) {
 // 内置接口
 Object.assign(
   RongCloud.prototype,
-  require('./lib/util'),
-  require('./lib/user'),
-  require('./lib/message'),
-  require('./lib/history'),
-  require('./lib/sensitive-word'),
-  require('./lib/group')
+  Utility,
+  User,
+  Message,
+  History,
+  SensitiveWord,
+  Group
 );
 
 /**
