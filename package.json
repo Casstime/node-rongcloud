@@ -3,6 +3,7 @@
   "version": "0.4.4",
   "description": "rongcloud api for node",
   "main": "index.js",
+  "type": "index.d.ts",
   "scripts": {
     "test": "mocha test"
   },

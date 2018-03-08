@@ -1,7 +1,8 @@
+// @ts-check
 const { expect } = require('chai');
 
 const config = require('./config');
-const RongCloud = require('../index');
+const RongCloud = require('../');
 
 const rongCloud = new RongCloud({
   appKey: config.appKey,
