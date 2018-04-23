@@ -7,7 +7,7 @@
  * @param {number} [options.timeout] 请求超时时间
  * @param {boolean|object} [options.logger] 日志工具，默认false,不打印日志
  */
-export = class RongCloud {
+declare class RongCloud {
   constructor(options: any);
 
   /**
@@ -133,7 +133,7 @@ export = class RongCloud {
    * @param date
    * @return {Promise}
    */
-  removeHistoryMessages(date: any, date: any): any;
+  removeHistoryMessages(date: any): any;
 
   /**
    * 发送私聊消息
@@ -364,3 +364,5 @@ export = class RongCloud {
    */
   request(api: any, method: any, options: any): any;
 }
+
+export = RongCloud;
