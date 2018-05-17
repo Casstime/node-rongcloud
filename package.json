@@ -23,7 +23,7 @@
   "homepage": "https://github.com/Casstime/node-rongcloud#readme",
   "dependencies": {
     "boom": "^4.3.1",
-    "request": "^2.81.0"
+    "request": "^2.86.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
