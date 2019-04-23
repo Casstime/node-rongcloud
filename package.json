@@ -1,6 +1,6 @@
 {
   "name": "node-rongcloud",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "description": "rongcloud api for node",
   "main": "index.js",
   "type": "index.d.ts",
