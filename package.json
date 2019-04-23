@@ -6,8 +6,7 @@
   "type": "index.d.ts",
   "scripts": {
     "test": "mocha test",
-    "ts": "jsdoc -t node_modules/@otris/jsdoc-tsd -r lib index.js -d index.d.ts && echo 'export = RongCloud' >> index.d.ts",
-    "prepublish": "npm run ts && npm version patch"
+    "ts": "jsdoc -t node_modules/@otris/jsdoc-tsd -r lib index.js -d index.d.ts && echo 'export = RongCloud' >> index.d.ts"
   },
   "repository": {
     "type": "git",

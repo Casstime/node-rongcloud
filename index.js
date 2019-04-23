@@ -6,13 +6,18 @@ const history = require('./lib/history');
 const user = require('./lib/user');
 
 /**
+ * 构造属性
+ * @typedef {Object} Options
+ * @property {string} appKey
+ * @property {string} appSecret
+ * @property {boolean} [usePrefix] - 头部是否使用RC-前缀
+ * @property {number} [timeout] - 请求超时时间
+ * @property {boolean|object} [logger] - 日志工具，默认false,不打印日志
+ */
+
+/**
  * @constructor
- * @param {object} options
- * @param {string} options.appKey
- * @param {string} options.appSecret
- * @param {boolean} [options.usePrefix] 头部是否使用RC-前缀
- * @param {number} [options.timeout] 请求超时时间
- * @param {boolean|object} [options.logger] 日志工具，默认false,不打印日志
+ * @param {Options} options
  */
 function RongCloud(options) {
   const { appKey, appSecret, usePrefix } = options;
