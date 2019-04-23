@@ -173,7 +173,7 @@ declare class RongCloud {
      * @param name 用户名称，最大长度 128 字节。用来在 Push 推送时显示用户的名称。（必传）
      * @param portraitUri 用户头像 URI，最大长度 1024 字节。（必传）
      */
-    getUserToken(userId: string, name: string, portraitUri: string): Promise<{code: number, token: string, userId, string}>;
+    getUserToken(userId: string, name: string, portraitUri: string): Promise<{code: number, token: string, userId: string}>;
 
     /**
      * 刷新用户token
