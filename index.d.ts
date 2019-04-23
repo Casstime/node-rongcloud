@@ -261,8 +261,9 @@ declare class RongCloud {
      * @param timestamp
      * @param nonce
      * @param signature
+     * @returns
      */
-    validateSignature(timestamp: number | string, nonce: string, signature: boolean): void;
+    validateSignature(timestamp: number | string, nonce: string, signature: string): boolean;
 
     /**
      * 
