@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "index.d.ts",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "ts": "jsdoc -t node_modules/@otris/jsdoc-tsd -r lib index.js -d index.d.ts && echo 'export = RongCloud' >> index.d.ts"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,10 @@
     "request": "^2.86.0"
   },
   "devDependencies": {
+    "@otris/jsdoc-tsd": "^1.0.4",
     "chai": "^3.5.0",
     "cz-conventional-changelog": "^2.1.0",
+    "jsdoc": "^3.5.5",
     "mocha": "^6.1.4"
   },
   "engines": {
