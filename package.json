@@ -30,7 +30,7 @@
     "@otris/jsdoc-tsd": "^1.0.4",
     "chai": "^3.5.0",
     "cz-conventional-changelog": "^2.1.0",
-    "jsdoc": "^3.5.5",
+    "jsdoc": "^3.6.3",
     "mocha": "^6.1.4"
   },
   "engines": {
