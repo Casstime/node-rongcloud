@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/Casstime/node-rongcloud#readme",
   "dependencies": {
-    "boom": "^4.3.1",
-    "request": "^2.86.0"
+    "boom": "^7.3.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@otris/jsdoc-tsd": "^1.0.4",
