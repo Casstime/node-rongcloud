@@ -1,6 +1,6 @@
 declare class RongCloud {
     /**
-     * 
+     *
      * @param options
      */
     constructor(options: Options);
@@ -199,7 +199,7 @@ declare class RongCloud {
     validateSignature(timestamp: number | string, nonce: string, signature: string): boolean;
 
     /**
-     * 
+     *
      * @param logger
      */
     setLogger(logger: any): void;
@@ -213,28 +213,28 @@ declare class RongCloud {
     request(api: string, method: string, options: any): Promise<any>;
 
     /**
-     * 
+     *
      * @param api
      * @param options
      */
     get(api: string, options: any): Promise<any>;
 
     /**
-     * 
+     *
      * @param api
      * @param options
      */
     post(api: string, options: any): Promise<any>;
 
     /**
-     * 
+     *
      * @param api
      * @param options
      */
     put(api: string, options: any): Promise<any>;
 
     /**
-     * 
+     *
      * @param api
      * @param options
      */
@@ -313,7 +313,7 @@ declare interface PublishPrivateTemplateParams {
     /**
      * 消息内容中，标识位对应内容。（必传）
      */
-    values: string;
+    values: string | any;
     /**
      * 发送消息内容，内容中定义标识通过 values 中设置的标识位内容进行替换，参考融云消息类型表.示例说明；如果 objectName 为自定义消息类型，该参数可自定义格式。（必传）
      */
@@ -321,7 +321,7 @@ declare interface PublishPrivateTemplateParams {
     /**
      * 定义显示的 Push 内容，如果 objectName 为融云内置消息类型时，则发送后用户一定会收到 Push 信息。如果为自定义消息，定义显示的 Push 内容，内容中定义标识通过 values 中设置的标识位内容进行替换。如消息类型为自定义不需要 Push 通知，则对应数组传空值即可。(必传)
      */
-    pushContent: string;
+    pushContent: string | string[];
     /**
      * 针对 iOS 平台为 Push 通知时附加到 payload 中，Android 客户端收到推送消息时对应字段名为 pushData。(可选)
      */

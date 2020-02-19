@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@otris/jsdoc-tsd": "^1.0.4",
+    "@types/mocha": "^7.0.1",
     "chai": "^3.5.0",
     "cz-conventional-changelog": "^2.1.0",
     "jsdoc": "^3.6.3",
