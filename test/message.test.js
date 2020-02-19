@@ -1,6 +1,5 @@
 // @ts-check
 const { expect } = require("chai");
-const nock = require("nock");
 const config = require("./config");
 const RongCloud = require("../");
 
@@ -9,7 +8,6 @@ const rongCloud = new RongCloud({
   appSecret: config.appSecret,
   logger: true
 });
-
 describe("Message Test", () => {
   describe("Publish Private Message", () => {
     it("Publish TextMessage", done => {
@@ -43,28 +41,6 @@ describe("Message Test", () => {
           done();
         })
         .catch(done);
-    });
-  });
-
-  describe("Publish System Message FAILED", () => {
-    let mock;
-    beforeEach(() => {
-      mock = nock("http://api-cn.ronghub.com/")
-        .get(path => path.includes("fake"))
-        .reply(500, "<html><body>error</body></html>");
-    });
-    afterEach(() => {
-      mock.restore();
-    });
-    it("Publish Text Message Failed", done => {
-      rongCloud
-        .post("/fake", {})
-        .then(() => {
-          done("error");
-        })
-        .catch(e => {
-          done();
-        });
     });
   });
 
